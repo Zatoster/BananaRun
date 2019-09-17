@@ -23,6 +23,7 @@ public class Student70 extends PodPlugIn {
     int CpRace=0;  // Number of checkpoints
     int TuRace=0;  // Number of Laps
     int CpNext=0;  // Index of the next checkpoint
+    int CpPrev=0;  // Index of the previous checkpoint
     float sxAct=0; // Actual x position
     float syAct=0; // Actual y position
     float Ncpx=0;  // Next Checkpoint x position
@@ -44,9 +45,13 @@ public class Student70 extends PodPlugIn {
         CpRace=getNbRaceCheckPoints();
         TuRace=getNbMaxLaps();
         CpNext=getNextCheckPointIndex();
-
-        moveToNextCheckPoint(0.5f);
-        incSpeed(1);
+        if CpNext>1 {
+            CpPrev=CpNext-1;
+        }
+        else{
+            CpPrev=CpRace;
+        }
+        
 
 
         // END OF CODE AREA
