@@ -61,9 +61,9 @@ public class Student70 extends PodPlugIn {
         }
         AgAct=getShipAngle();
         sxAct=getShipPositionX();
-        sxPrev=getCheckPointPositionX();
+        sxPrev=getCheckPointPositionX(CpBef);
         syAct=getShipPositionY();
-        syPrev=getCheckPointPositionX();
+        syPrev=getCheckPointPositionY(CpBef);
         Ncpx=getCheckPointPositionX(CpNext);
         Ncpy=getCheckPointPositionY(CpNext);
         float distNCp=GetDist(sxAct, Ncpx, syAct, Ncpy); //Distance entre le kart et le NCheckpoint
