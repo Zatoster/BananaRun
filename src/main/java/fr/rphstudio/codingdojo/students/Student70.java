@@ -66,9 +66,13 @@ public class Student70 extends PodPlugIn {
         syPrev=getCheckPointPositionY(CpBef);
         Ncpx=getCheckPointPositionX(CpNext);
         Ncpy=getCheckPointPositionY(CpNext);
-        float distNCp=GetDist(sxAct, Ncpx, syAct, Ncpy); //Distance entre le kart et le NCheckpoint
+        float distNCp=GetDist(sxAct, sxPrev, syAct, syPrev); //Distance entre le kart et le NCheckpoint
         float distBtwnCp=GetDist(Ncpx, sxPrev, Ncpy, syPrev); //Distance entre les checkpoints
         DistPer=(distNCp*100)/distBtwnCp;
+        incSpeed(1);
+        if (DistPer>79){
+            turnTowardPosition(Ncpx, Ncpy);
+        }
 
         // END OF CODE AREA
         //-------------------------------------------------------
