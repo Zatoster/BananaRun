@@ -77,23 +77,6 @@ public class Student70 extends PodPlugIn {
         else{
             CpBef=CpRace;
         }
-<<<<<<< Updated upstream
-
-        AgAct=getShipAngle();
-        sxAct=getShipPositionX();
-        sxPrec=getPreviousCheckPointX();
-        syAct=getShipPositionY();
-        syPrec=getPreviousCheckPointY();
-        Ncpx=getNextCheckPointX();
-        Ncpy=getShipSpeedY();
-        (((sxPrec-sxAct)*(sxPrec-sxAct))+((syPrec-syAct)*(syPrec-syAct)))=DistCp;
-        sqrt(DistCp);
-
-
-
-
-        moveToNextCheckPoint(1f);
-=======
         AgAct=getShipAngle();
         sxAct=getShipPositionX();
         sxPrev=getCheckPointPositionX();
@@ -105,10 +88,6 @@ public class Student70 extends PodPlugIn {
         float distBtwnCp=GetDist(Ncpx, sxPrev, Ncpy, syPrev); //Distance entre les checkpoints
         DistPer=(distNCp*100)/distBtwnCp;
         
-
->>>>>>> Stashed changes
-
-
         // END OF CODE AREA
         //-------------------------------------------------------
     }
