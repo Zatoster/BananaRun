@@ -23,11 +23,16 @@ public class Student70 extends PodPlugIn {
     int CpRace=0;  // Number of checkpoints
     int TuRace=0;  // Number of Laps
     int CpNext=0;  // Index of the next checkpoint
-    int CpPrev=0;  // Index of the previous checkpoint
+    int CpBef=0;   // Index of the last checkpoint
+    float AgAct=0; // get the current angle
     float sxAct=0; // Actual x position
+    float sxPrec=0; // Last x position
     float syAct=0; // Actual y position
+    float syPrec=0; // Last y position
     float Ncpx=0;  // Next Checkpoint x position
     float Ncpy=0;  // Next Checkpoint y position
+    float DistCp=0; // Distance between n and n-1 cp
+    float DistPer=0; // percentage of travel
 
     // END OF VARIABLES/FUNCTIONS AREA
     //-------------------------------------------------------
@@ -44,14 +49,29 @@ public class Student70 extends PodPlugIn {
 
         CpRace=getNbRaceCheckPoints();
         TuRace=getNbMaxLaps();
+
         CpNext=getNextCheckPointIndex();
-        if CpNext>1 {
-            CpPrev=CpNext-1;
+        if(CpNext>1){
+            CpBef=CpNext-1;
         }
         else{
-            CpPrev=CpRace;
+            CpBef=CpRace;
         }
-        
+
+        AgAct=getShipAngle();
+        sxAct=getShipPositionX();
+        sxPrec=getPreviousCheckPointX();
+        syAct=getShipPositionY();
+        syPrec=getPreviousCheckPointY();
+        Ncpx=getNextCheckPointX();
+        Ncpy=getShipSpeedY();
+        (((sxPrec-sxAct)*(sxPrec-sxAct))+((syPrec-syAct)*(syPrec-syAct)))=DistCp;
+        sqrt(DistCp);
+
+
+
+
+        moveToNextCheckPoint(1f);
 
 
         // END OF CODE AREA

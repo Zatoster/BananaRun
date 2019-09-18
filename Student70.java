@@ -51,7 +51,6 @@ public class Student70 extends PodPlugIn {
         else{
             CpBef=CpRace;
         }
-
         AgAct=getShipAngle();
         sxAct=getShipPositionX();
         sxPrec=getPreviousCheckPointX();
@@ -60,7 +59,7 @@ public class Student70 extends PodPlugIn {
         Ncpx=getNextCheckPointX();
         Ncpy=getShipSpeedY();
 
-
+        sqr
 
 
         moveToNextCheckPoint(1f);
