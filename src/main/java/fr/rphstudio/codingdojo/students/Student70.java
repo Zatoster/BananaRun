@@ -20,6 +20,7 @@ public class Student70 extends PodPlugIn {
     //-------------------------------------------------------
     // DECLARE YOUR OWN VARIABLES AND FUNCTIONS HERE
 
+<<<<<<< Updated upstream
     int CpRace=0;  // Number of checkpoints
     int TuRace=0;  // Number of Laps
     int CpNext=0;  // Index of the next checkpoint
@@ -33,7 +34,26 @@ public class Student70 extends PodPlugIn {
     float Ncpy=0;  // Next Checkpoint y position
     float DistCp=0; // Distance between n and n-1 cp
     float DistPer=0; // percentage of travel
+=======
+    int CpRace=0;    // Number of checkpoints
+    int TuRace=0;    // Number of Laps
+    int CpNext=0;    // Index of the next checkpoint
+    int CpBef=0;     // Index of the last checkpoint
+    float AgAct=0;   // Get the current angle
+    float sxAct=0;   // Actual x position
+    float sxPrev=0;  // Previous x position
+    float syAct=0;   // Actual y position
+    float syPrev=0;  // Previous x position
+    float Ncpx=0;    // Next Checkpoint x position
+    float Ncpy=0;    // Next Checkpoint y position
+    float DistPer=0; // Percentage of travel
+>>>>>>> Stashed changes
 
+    float GetDist(float x1, float x2, float y1, float y2){
+        float dx=x2-x1;
+        float dy=y2-y1;
+        return sqrt(dx*dx+dy*dy);
+    }
     // END OF VARIABLES/FUNCTIONS AREA
     //-------------------------------------------------------
 
@@ -57,6 +77,7 @@ public class Student70 extends PodPlugIn {
         else{
             CpBef=CpRace;
         }
+<<<<<<< Updated upstream
 
         AgAct=getShipAngle();
         sxAct=getShipPositionX();
@@ -72,6 +93,20 @@ public class Student70 extends PodPlugIn {
 
 
         moveToNextCheckPoint(1f);
+=======
+        AgAct=getShipAngle();
+        sxAct=getShipPositionX();
+        sxPrev=getCheckPointPositionX();
+        syAct=getShipPositionY();
+        syPrev=getCheckPointPositionX();
+        Ncpx=getCheckPointPositionX(CpNext);
+        Ncpy=getCheckPointPositionY(CpNext);
+        float distNCp=GetDist(sxAct, Ncpx, syAct, Ncpy); //Distance entre le kart et le NCheckpoint
+        float distBtwnCp=GetDist(Ncpx, sxPrev, Ncpy, syPrev); //Distance entre les checkpoints
+        DistPer=(distNCp*100)/distBtwnCp;
+        
+
+>>>>>>> Stashed changes
 
 
         // END OF CODE AREA
